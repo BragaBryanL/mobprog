@@ -1,0 +1,39 @@
+import 'package:flutter/material.dart';
+
+void main() {
+  List<Message> inbox = [
+    Message(
+      sender: 'Braggy',
+      message: 'Hello World',
+      isUnread: true,
+    ),
+    Message(
+      sender: 'Bryan',
+      message: '5 Letters',
+      isUnread: true,
+    ),
+    Message(
+      sender: 'Okay',
+      message: '3 Letters',
+      isUnread: false,
+    ),
+    Message(
+      sender: 'Braga',
+      message: '6 Letters',
+      isUnread: false,
+    ),
+  ];
+
+  for (var message in inbox) {
+    print(
+        '${message.isUnread ? '(Unread) ' : ''}${message.sender}: ${message.message}');
+  }
+}
+
+class Message {
+  String sender;
+  String message;
+  bool isUnread;
+
+  Message({required this.sender, required this.message, required this.isUnread});
+}
